@@ -1,6 +1,6 @@
-const webpack = require('webpack')
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: (path.resolve(__dirname), './src/index.jsx'),
@@ -27,12 +27,8 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.sass$/,
-        loaders: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.(ttf|svg)$/,
@@ -42,8 +38,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.HotModuleReplacementPlugin()
   ],
   stats: {
     hash: false,
@@ -53,4 +48,4 @@ module.exports = {
     children: false,
     colors: true
   }
-}
+};
