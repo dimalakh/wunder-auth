@@ -10,21 +10,68 @@ body {
 #root {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 10em 0 5em 0;
   min-height: 100vh;
-  
-  .auth-form {
-    max-width: 30em;
+}
+
+.auth-form {
+  max-width: 30em;
+}
+
+.auth-input {
+  -webkit-appearance: none; 
+  box-sizing: border-box;
+  margin: .5em 0 1.5em 0;
+  padding: 1em;
+  width: 100%;
+  background-color: $grey-color;
+  box-shadow: none;
+  font-size: 1em;
+  text-transform: capitalize;
+
+  &__wrapper {
+    position: relative;
   }
 
-  .auth-input {
-    box-sizing: border-box;
-    margin: .5em 0 1.5em 0;
-    padding: 1em;
+  &__suggestions {
+    top: 4em;
     width: 100%;
-    background-color: $grey-color;
-    box-shadow: none;
-    font-size: 1em;
+    position: absolute;
+    background: $white-color;
+    box-shadow: $light-shadow;
+
+    &.geosuggest__suggests--hidden {
+      display: none;
+    }
+
+    li {
+      width: 100%;
+      padding: 1em;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $white-color;
+      }
+    }
   }
 }
 
+.auth-successful {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  h1 {
+    font-size: 2em;
+    font-weight: 600;
+    color: $primary-color;
+    margin: 1em 0;
+  }
+
+  h2 {
+    font-size: 1.4em;
+    color: $dark-grey-color;
+  }
+}

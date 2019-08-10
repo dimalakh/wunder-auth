@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
-class Form extends PureComponent {
+class Form extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);

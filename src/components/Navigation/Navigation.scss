@@ -32,5 +32,9 @@
     &:active {
       opacity: .8;
     }
+
+    &.is-invalid {
+      opacity: .7;
+    }
   }
 }
