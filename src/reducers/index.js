@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import personalInfo from './personalInfo';
+import data from './data';
 import UI from './UI';
 
 const authForm = combineReducers({
   UI,
-  personalInfo
+  data
 });
 
 export default authForm;

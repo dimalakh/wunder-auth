@@ -1,19 +1,19 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
-import FirstStep from './FirstStep';
-import Navigation from '../components/Navigation/Navigation';
-import { activateNextStep, activatePreviousStep } from '../actions/UI';
+import FirstStep from './FirstStepForm';
+import SecondStep from './SecondStepForm';
 
-const App = ({ activeStep, activatePreviousStep, activateNextStep }) => {
+const App = ({ activeStep }) => {
   const getActiveStepComponent = () => {
     switch (activeStep) {
       case 1:
         return <FirstStep />;
+      case 2:
+        return <SecondStep />;
       default:
-        return <FirstStep />;
+        return <SecondStep />;
     }
   };
 
@@ -24,10 +24,4 @@ const mapStateToProps = state => ({
   activeStep: state.UI.activeStep
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ activateNextStep, activatePreviousStep }, dispatch);
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps)(App);
