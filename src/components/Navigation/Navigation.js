@@ -6,7 +6,9 @@ const Navigation = ({ activeStep, onPreviousClick }) => {
   return (
     <div>
       {showPreviousButton && (
-        <button onClick={onPreviousClick}>Previous</button>
+        <button type="button" onClick={onPreviousClick}>
+          Previous
+        </button>
       )}
       <button type="submit">Submit</button>
     </div>

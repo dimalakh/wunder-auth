@@ -6,13 +6,19 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import throttle from 'lodash.throttle';
+import thunk from 'redux-thunk';
 
 import rootReducer from './reducers';
 import App from './containers/App';
 import { saveState, loadState } from './services/localStorage';
 
 const persistedState = loadState();
-const store = createStore(rootReducer, persistedState, applyMiddleware(logger));
+
+const store = createStore(
+  rootReducer,
+  persistedState,
+  applyMiddleware(thunk, logger)
+);
 
 store.subscribe(
   throttle(() => {

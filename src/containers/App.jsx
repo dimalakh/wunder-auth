@@ -1,9 +1,13 @@
+import '../styles/main.scss';
+
 import React from 'react';
 
 import { connect } from 'react-redux';
 
 import FirstStep from './FirstStepForm';
 import SecondStep from './SecondStepForm';
+import ThirdStepForm from './ThirdStepForm';
+import SuccessComponent from './SuccessComponent';
 
 const App = ({ activeStep }) => {
   const getActiveStepComponent = () => {
@@ -12,8 +16,12 @@ const App = ({ activeStep }) => {
         return <FirstStep />;
       case 2:
         return <SecondStep />;
+      case 3:
+        return <ThirdStepForm />;
+      case 4:
+        return <SuccessComponent />;
       default:
-        return <SecondStep />;
+        return <FirstStep />;
     }
   };
 

@@ -1,4 +1,4 @@
-import { UPDATE_DATA } from '../constants/actionTypes';
+import { UPDATE_DATA, SET_PAYMENT_ID } from '../constants/actionTypes';
 
 const defaultState = {
   firstName: '',
@@ -7,7 +7,11 @@ const defaultState = {
   address: '',
   house: '',
   city: '',
-  zipCode: ''
+  zipCode: '',
+  customerId: '',
+  iban: '',
+  owner: '',
+  paymentDataId: null
 };
 
 const data = (state = defaultState, action) => {
@@ -16,6 +20,8 @@ const data = (state = defaultState, action) => {
   switch (type) {
     case UPDATE_DATA:
       return { ...state, ...payload };
+    case SET_PAYMENT_ID:
+      return { ...state, paymentDataId: payload };
     default:
       return state;
   }

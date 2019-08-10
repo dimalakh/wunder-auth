@@ -1,11 +1,12 @@
 import React from 'react';
-import Navigation from '../components/Navigation/Navigation';
-import Form from '../components/Form';
-import { updateData } from '../actions';
-import { previousStep, nextStep } from '../actions/UI';
 import { connect } from 'react-redux';
 
-const SecondStep = ({
+import Navigation from '../components/Navigation/Navigation';
+import Form from '../components/Form';
+import { updateData, sendPayment } from '../actions';
+import { previousStep } from '../actions/UI';
+
+const ThirdStep = ({
   values,
   activeStep,
   onChange,
@@ -14,10 +15,9 @@ const SecondStep = ({
 }) => {
   return (
     <Form values={values} onChange={onChange} onSubmit={onSubmit}>
-      <input type="address" name="address" />
-      <input type="text" name="city" />
-      <input type="number" name="house" />
-      <input type="number" name="zipCode" />
+      <input type="number" name="customerId" />
+      <input type="text" name="iban" />
+      <input type="text" name="owner" />
 
       <Navigation activeStep={activeStep} onPreviousClick={onPreviousClick} />
     </Form>
@@ -32,10 +32,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onChange: values => dispatch(updateData(values)),
   onPreviousClick: () => dispatch(previousStep()),
-  onSubmit: () => dispatch(nextStep())
+  onSubmit: () => dispatch(sendPayment())
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SecondStep);
+)(ThirdStep);
