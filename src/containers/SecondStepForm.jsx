@@ -16,10 +16,10 @@ const SecondStep = ({
 }) => {
   return (
     <Form values={values} onChange={onChange} onSubmit={onSubmit}>
-      <input type="address" name="address" />
-      <input type="text" name="city" />
-      <input type="number" name="house" />
-      <input type="number" name="zipCode" />
+      <input className="auth-input" type="address" name="address" />
+      <input className="auth-input" type="text" name="city" />
+      <input className="auth-input" type="number" name="house" />
+      <input className="auth-input" type="number" name="zipCode" />
       <Geosuggest />
       <Navigation activeStep={activeStep} onPreviousClick={onPreviousClick} />
     </Form>

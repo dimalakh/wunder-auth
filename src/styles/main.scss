@@ -1,0 +1,30 @@
+@import './reset.scss';
+@import './vars.scss';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: $dark-grey-color;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
+  .auth-form {
+    max-width: 30em;
+  }
+
+  .auth-input {
+    box-sizing: border-box;
+    margin: .5em 0 1.5em 0;
+    padding: 1em;
+    width: 100%;
+    background-color: $grey-color;
+    box-shadow: none;
+    font-size: 1em;
+  }
+}
+

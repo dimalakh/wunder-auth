@@ -37,7 +37,11 @@ class Form extends PureComponent {
       return child;
     });
 
-    return <form onSubmit={this.handleSubmit}>{childrenWithProps}</form>;
+    return (
+      <form className="auth-form" onSubmit={this.handleSubmit}>
+        {childrenWithProps}
+      </form>
+    );
   }
 }
 

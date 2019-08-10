@@ -15,9 +15,9 @@ const ThirdStep = ({
 }) => {
   return (
     <Form values={values} onChange={onChange} onSubmit={onSubmit}>
-      <input type="number" name="customerId" />
-      <input type="text" name="iban" />
-      <input type="text" name="owner" />
+      <input className="auth-input" type="number" name="customerId" />
+      <input className="auth-input" type="text" name="iban" />
+      <input className="auth-input" type="text" name="owner" />
 
       <Navigation activeStep={activeStep} onPreviousClick={onPreviousClick} />
     </Form>

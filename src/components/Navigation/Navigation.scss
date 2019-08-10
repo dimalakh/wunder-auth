@@ -1,0 +1,36 @@
+@import '../../styles/vars.scss';
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2em;
+
+  &__button {
+    background-color: $primary-color;
+    color: $white-color;
+    padding: .8em 2em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    min-width: 10em;
+
+    &.primary {
+      margin-left: auto;
+    }
+    
+    &.back {
+      background-color: $light-grey-color;
+      color: $dark-grey-color;
+    }
+
+    &:hover {
+      opacity: .9;
+    }
+
+    &:active {
+      opacity: .8;
+    }
+  }
+}

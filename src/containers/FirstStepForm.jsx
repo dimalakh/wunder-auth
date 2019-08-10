@@ -15,10 +15,35 @@ const SecondStep = ({
 }) => {
   return (
     <Form values={values} onChange={onChange} onSubmit={onSubmit}>
-      <input type="address" name="address" />
-      <input type="text" name="city" />
-      <input type="number" name="house" />
-      <input type="number" name="zipCode" />
+      <label for="first-name">First name:</label>
+      <input
+        id="first-name"
+        className="auth-input"
+        type="text"
+        name="firstName"
+        placeholder="Type your first name..."
+        required
+      />
+
+      <label for="last-name">Last name:</label>
+      <input
+        id="last-name"
+        className="auth-input"
+        type="text"
+        name="LastName"
+        placeholder="Type your last name..."
+        required
+      />
+
+      <label for="telephone">Telephone:</label>
+      <input
+        id="telephone"
+        className="auth-input"
+        type="tel"
+        name="telephone"
+        placeholder="Type your telephone.."
+        required
+      />
 
       <Navigation activeStep={activeStep} onPreviousClick={onPreviousClick} />
     </Form>
